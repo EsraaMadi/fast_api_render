@@ -46,7 +46,7 @@ def root():
 async def read_item(item_id):
     return {"item_id": item_id}
 
-@app.post("/predict")
+@app.get("/predict")
 async def predict(input_features: InputFeatures):
     data = preprocessing(input_features)
     y_pred = model.predict(data)
